@@ -18,7 +18,7 @@ Version: 0.0.1
 * cidade
 * data inicio de actividade
 * actividade
-* estado (activo?)
+* estado (active:em actividade, inactive:encerrada, insolvency:em insovência, insolvency:em revitalização)
 * cae
 * email
 * telefone
