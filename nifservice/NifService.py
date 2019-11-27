@@ -14,15 +14,20 @@ def getNifInfo(nif = None, key = None):
 
 	results = results.json()
 	
-	if results.get('result') != 'success':
-		raise RuntimeError(results.get('message'))
-			
-	data = {'status':'OK'}
+	data = {'status':'NOT FOUNDED'}
+	
+	if results.get('result') and results.get('result') != 'success':
+		if results.get('result') == 'error':
+			return data
+		raise RuntimeError(results.get('message'))			
 	
 	
 	if results.get('records') and results.get('records').get(nif):
-		results = results.get('records').get(nif)
+		results = results.get('records').get(nif)	
+		
 	
+		data['status'] = 'OK'
+		
 		if results.get('title'):
 			data['nome'] = results.get('title')
 		if results.get('address'):
@@ -86,5 +91,7 @@ def getNifInfo(nif = None, key = None):
 			data['alias'] = results.get('alias')	
 		if results.get('portugalio'):
 			data['portugalio'] = results.get('portugalio')
+		
+		
 			
 	return data

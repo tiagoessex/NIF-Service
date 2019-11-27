@@ -2,7 +2,9 @@
 Version: 0.0.1
 
 # Description
-* Given a NIF number, the service returns a json with a myriad of information about the entity connected with that nif.
+* Given a NIF number, the service returns a json with a myriad of information about the entity connected with that nif, with 'status' = 'OK'.
+* 'status' = 'NOT FOUNDED' if there's no data on it
+* To obtain a key, register in https://www.nif.pt/api/
 * **Only portuguese NIFs** 
 
 
